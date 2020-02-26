@@ -11,7 +11,7 @@ export const ItemsSelection = props => {
   useEffect(() => {
     const fetchData = async () => {
       const items = await getItems(type, option);
-      setItems(items.results);
+      setItems(items);
     };
     fetchData();
   }, [setItems, option, type]);

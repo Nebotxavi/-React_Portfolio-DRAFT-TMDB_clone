@@ -9,5 +9,5 @@ const getEndpoint = (type, option) => {
 export const getItems = async (type, option) => {
   const endpoint = getEndpoint(type, option);
   const { data } = await http.get(endpoint);
-  return data;
+  return data.results;
 };
