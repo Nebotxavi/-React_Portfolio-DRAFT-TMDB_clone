@@ -6,7 +6,7 @@ export const TvLinks = () => {
     <div>
       <Link
         to={{
-          pathname: "/tv/popular",
+          pathname: "/search/tv/popular",
           state: { title: "Popular TV Shows" }
         }}
       >
@@ -14,7 +14,7 @@ export const TvLinks = () => {
       </Link>
       <Link
         to={{
-          pathname: "/tv/top_rated",
+          pathname: "/search/tv/top_rated",
           state: { title: "Top Rated TV Shows" }
         }}
       >
@@ -22,7 +22,7 @@ export const TvLinks = () => {
       </Link>
       <Link
         to={{
-          pathname: "/tv/on_the_air",
+          pathname: "/search/tv/on_the_air",
           state: { title: "Currently Airing TV Shows" }
         }}
       >
@@ -30,7 +30,7 @@ export const TvLinks = () => {
       </Link>
       <Link
         to={{
-          pathname: "/tv/airing_today",
+          pathname: "/search/tv/airing_today",
           state: { title: "TV Shows Airing Today" }
         }}
       >

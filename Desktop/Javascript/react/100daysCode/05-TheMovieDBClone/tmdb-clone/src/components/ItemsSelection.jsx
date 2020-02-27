@@ -8,6 +8,9 @@ export const ItemsSelection = props => {
   const { type, option } = useParams();
   const { state: section } = useLocation();
 
+  console.log("type :", type);
+  console.log("option :", option);
+
   useEffect(() => {
     const fetchData = async () => {
       const items = await getItems(type, option);

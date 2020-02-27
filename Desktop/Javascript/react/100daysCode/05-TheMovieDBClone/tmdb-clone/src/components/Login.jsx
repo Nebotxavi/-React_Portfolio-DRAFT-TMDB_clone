@@ -1,34 +1,22 @@
 import React from "react";
+import { Redirect, useLocation } from "react-router-dom";
 
-import { getToken, isUserValid, getSessionId } from "../services/authService";
+import { login, getUsername } from "../services/authService";
 
-// PUT IN TRY/CATCH EVERY AWAIT call
 export const Login = () => {
-  const login = async () => {
-    const token = await getToken();
+  const { state } = useLocation();
 
-    const validUser = await isUserValid(
-      token,
-      process.env.REACT_APP_TESTING_USER,
-      process.env.REACT_APP_TESTING_PASS
-    );
+  if (getUsername()) return <Redirect to="/" />;
 
-    if (validUser) {
-      const sessionId = await getSessionId(token);
-      const newLocalStorage = {
-        username: process.env.REACT_APP_TESTING_USER,
-        sessionId
-      };
-      localStorage.setItem("TMDB_clone", JSON.stringify(newLocalStorage));
-    } else {
-      console.log("Invalid username or password.");
-      return;
-    }
+  const handleClickLogin = async () => {
+    console.log("into handleClickLogin");
+    await login();
+    window.location = state ? state.from.pathname : "/";
   };
 
   return (
     <div>
-      <button onClick={login}>Login</button>
+      <button onClick={() => handleClickLogin()}>Login</button>
     </div>
   );
 };

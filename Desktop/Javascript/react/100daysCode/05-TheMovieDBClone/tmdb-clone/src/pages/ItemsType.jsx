@@ -8,6 +8,7 @@ import { PeopleLinks } from "../components/PeopleLinks";
 
 export const ItemsLinks = () => {
   const { type } = useParams();
+  console.log("type from ItemsType/links :", type);
 
   return (
     <>
@@ -15,9 +16,7 @@ export const ItemsLinks = () => {
       {type === "tv" && <TvLinks />}
       {type === "person" && <PeopleLinks />}
 
-      <Switch>
-        <Route path="/:type/:option" component={ItemsSelection} />
-      </Switch>
+      <Route path="/search/:type/:option" component={ItemsSelection} />
     </>
   );
 };

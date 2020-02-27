@@ -6,7 +6,7 @@ export const PeopleLinks = () => {
     <div>
       <Link
         to={{
-          pathname: "/person/popular",
+          pathname: "/search/person/popular",
           state: { title: "Popular People" }
         }}
       >

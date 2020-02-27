@@ -6,7 +6,7 @@ export const MoviesLinks = () => {
     <div>
       <Link
         to={{
-          pathname: "/movie/popular",
+          pathname: "/search/movie/popular",
           state: { title: "Popular Movies" }
         }}
       >
@@ -14,7 +14,7 @@ export const MoviesLinks = () => {
       </Link>
       <Link
         to={{
-          pathname: "/movie/top_rated",
+          pathname: "/search/movie/top_rated",
           state: { title: "Top Rated Movies" }
         }}
       >
@@ -22,7 +22,7 @@ export const MoviesLinks = () => {
       </Link>
       <Link
         to={{
-          pathname: "/movie/upcoming",
+          pathname: "/search/movie/upcoming",
           state: { title: "Upcoming Movies" }
         }}
       >
@@ -30,7 +30,7 @@ export const MoviesLinks = () => {
       </Link>
       <Link
         to={{
-          pathname: "/movie/now_playing",
+          pathname: "/search/movie/now_playing",
           state: { title: "Now Playing Movies" }
         }}
       >
